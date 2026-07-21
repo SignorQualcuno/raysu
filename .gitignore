@@ -1,0 +1,28 @@
+# Build
+build/
+cmake-build-*/
+
+# Compilation database
+compile_commands.json
+
+# IDE / Editor
+.cache/
+.zed/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Compiled objects
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# Executables
+*.out
+*.exe
