@@ -1,4 +1,3 @@
-#include "scene_manager.h"
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
@@ -7,6 +6,7 @@
 #include <sstream>
 #include <string>
 #include <sys/types.h>
+
 #include <vector>
 
 #define SCREEN_WIDTH 800

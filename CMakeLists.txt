@@ -10,6 +10,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/scene_manager.cpp
+    src/scene.cpp
 )
 
 # Link Fedora's system raylib
