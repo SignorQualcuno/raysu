@@ -7,7 +7,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Critical for Zed/clangd autocompletion
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME}
+    src/main.cpp
+    src/scene_manager.cpp
+)
 
 # Link Fedora's system raylib
 find_package(raylib REQUIRED)
