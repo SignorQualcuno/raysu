@@ -3,13 +3,19 @@
 
 #include "scene.h"
 
+class Engine;
+
 class SceneManager {
   private:
-    std::vector<Scene> scenes;
+    Scene *m_currentScene;
+    Engine *m_engine;
 
   public:
-    SceneManager();
-    ~SceneManager();
+    void changeScene(Scene *);
+    void update(float);
+    void render();
+
+    void setEngine(Engine *engine) { m_engine = engine; }
 };
 
 #endif // SCENE_H

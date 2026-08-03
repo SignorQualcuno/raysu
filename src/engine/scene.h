@@ -1,34 +1,20 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#define FONT_SIZE 14
-
+#include <pthread.h>
 #include <raylib.h>
-#include <string>
-#include <vector>
 
-struct Label {
-    std::string text = "";
-    int font_size = FONT_SIZE;
-};
-
-struct Button {
-    Vector2 position;
-    Vector2 dimensions;
-    Label label;
-};
+class Engine;
 
 class Scene {
   private:
-    std::vector<Label> labels;
-    std::vector<Button> buttons;
-
   public:
-    Scene();
-    ~Scene();
+    virtual ~Scene() = default;
 
-    void update();
-    void draw();
+    virtual void init(Engine *engine) = 0;
+    virtual void cleanup() = 0;
+    virtual void update(float) = 0;
+    virtual void render() = 0;
 };
 
-#endif // SCENE_MANAGER_H
+#endif // SCENE_H
