@@ -21,7 +21,7 @@ class SettingsScene : public Scene {
     void cleanup() override {
         std::cout << "SETTINGS_SCENE_CLEANUP" << std::endl;
     };
-    void update(float) override;
+    void update(float deltaTime, Engine *engine) override;
     void render() override;
 };
 

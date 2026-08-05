@@ -1,15 +1,17 @@
 #include "node.h"
+#include "config.h"
+#include "ui/label.h"
 #include <raylib.h>
-#include <sys/types.h>
+#include <string>
 
-Node::Node() {
-    this->position = {0.0f, 0.0f};
-    this->label = "";
-    this->order = -1;
-}
+Node::Node(Vector2 position, Label label, int order)
+    : m_position(position), m_label(label), m_order(order) {}
 
-Node::Node(Vector2 position, std::string label, u_int8_t order) {
-    this->position = position;
-    this->label = label;
-    this->order = order;
+Node::Node(Vector2 position, int order)
+    : m_position(position), m_order(order), m_label(std::to_string(order)) {}
+
+void Node::render() {
+    DrawCircleV(m_position, NODE_RADIUS, m_color);
+    DrawText(m_label.getText().c_str(), m_position.x, m_position.y,
+             m_label.getFontSize(), m_label.getColor());
 }

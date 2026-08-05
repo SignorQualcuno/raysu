@@ -19,7 +19,7 @@ class MenuScene : public Scene {
 
     void init(Engine *engine) override;
     void cleanup() override { std::cout << "MENU_SCENE_CLEANUP" << std::endl; }
-    void update(float) override;
+    void update(float deltaTime, Engine *engine) override;
     void render() override;
 };
 

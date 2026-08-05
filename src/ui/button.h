@@ -16,11 +16,12 @@ class Button : public IClickable {
     Button() = delete;
     Button(Rectangle geometry, Color color,
            std::function<void()> onClick = nullptr);
+    Button(Rectangle geometry, Color color, Label text,
+           std::function<void()> onClick = nullptr);
+
+    void render();
 
     void click();
-
-    const Color &getBgColor() const { return m_color; }
-    void setBgColor(const Color &bgColor) { this->m_color = bgColor; }
 };
 
 #endif

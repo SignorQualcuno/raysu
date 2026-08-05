@@ -2,7 +2,7 @@
 #include <raylib.h>
 
 IClickable *IClickable::collisionDetected(Vector2 mousePos) {
-    if (CheckCollisionPointRec(mousePos, this->m_geometry)) {
+    if (CheckCollisionPointRec(mousePos, m_geometry)) {
         return this;
     }
     return nullptr;

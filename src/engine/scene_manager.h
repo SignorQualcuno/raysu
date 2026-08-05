@@ -2,17 +2,18 @@
 #define SCENE_MANAGER_H
 
 #include "scene.h"
+#include <memory>
 
 class Engine;
 
 class SceneManager {
   private:
-    Scene *m_currentScene;
+    std::unique_ptr<Scene> m_currentScene;
     Engine *m_engine;
 
   public:
-    void changeScene(Scene *);
-    void update(float);
+    void changeScene(std::unique_ptr<Scene> newScene);
+    void update(float deltaTime);
     void render();
 
     void setEngine(Engine *engine) { m_engine = engine; }

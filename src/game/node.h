@@ -1,29 +1,34 @@
 #ifndef NODE_H
 #define NODE_H
 
+#include "config.h"
+#include "ui/label.h"
 #include <raylib.h>
-#include <string>
-#include <sys/types.h>
 
 class Node {
   private:
-    Vector2 position;
-    std::string label;
-    u_int8_t order;
+    Vector2 m_position;
+    Label m_label;
+    Color m_color = RED;
+    int m_radius = NODE_RADIUS;
+    int m_order;
 
   public:
-    Node();
-    Node(Vector2, std::string, u_int8_t);
-    ~Node();
+    Node() = default;
+    Node(Vector2 position, Label label, int order);
+    Node(Vector2 position, int order);
+    ~Node() = default;
 
-    const Vector2 &getPosition() const { return position; }
-    void setPosition(const Vector2 &position) { this->position = position; }
+    void render();
 
-    const std::string &getLabel() const { return label; }
-    void setLabel(const std::string &label) { this->label = label; }
+    const Vector2 &getPosition() const { return m_position; }
+    void setPosition(const Vector2 &position) { this->m_position = position; }
 
-    const u_int8_t &getOrder() const { return order; }
-    void setOrder(const u_int8_t &order) { this->order = order; }
+    const Label &getLabel() const { return m_label; }
+    void setLabel(const Label &label) { this->m_label = label; }
+
+    const int &getOrder() const { return m_order; }
+    void setOrder(const int &order) { this->m_order = order; }
 };
 
 #endif // NODE_H

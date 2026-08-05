@@ -13,7 +13,7 @@ class Scene {
 
     virtual void init(Engine *engine) = 0;
     virtual void cleanup() = 0;
-    virtual void update(float) = 0;
+    virtual void update(float deltaTime, Engine *engine) = 0;
     virtual void render() = 0;
 };
 
