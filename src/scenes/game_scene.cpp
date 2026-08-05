@@ -39,10 +39,10 @@ void GameScene::render() {
     for (Label label : m_staticLabels) {
         label.render();
     }
+    m_accuracyLabel.render();
     for (const auto &node : m_nodes) {
         node->render();
     }
-    m_accuracyLabel.render();
 }
 
 void GameScene::updateNodes() {
@@ -127,6 +127,8 @@ void GameScene::generateNodeRandomPosition() {
 }
 
 void GameScene::reloadNodes() {
+    m_clicks = 0;
+    m_hits = 0;
     m_nodes.clear();
     for (std::size_t i = 1; i <= m_maxNodes; i++) {
         generateNodeRandomPosition();
