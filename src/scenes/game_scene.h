@@ -5,7 +5,6 @@
 #include "game/node.h"
 #include "ui/button.h"
 #include "ui/label.h"
-#include <iostream>
 #include <memory>
 #include <raylib.h>
 #include <string>
@@ -27,7 +26,7 @@ class GameScene : public Scene {
     GameScene(std::vector<Button> buttons, std::vector<Label> labels);
 
     void init(Engine *engine) override;
-    void cleanup() override { std::cout << "GAME_SCENE_CLEANUP" << std::endl; }
+    void cleanup() override;
     void update(float deltaTime, Engine *engine) override;
     void render() override;
 

@@ -21,15 +21,20 @@ GameScene::GameScene(std::vector<Button> buttons, std::vector<Label> labels) {
 }
 
 void GameScene::init(Engine *engine) {
+    SetMouseCursor(MOUSE_CURSOR_CROSSHAIR);
     srand(time(NULL));
     std::cout << "GAME_SCENE_INIT" << std::endl;
     m_staticLabels.push_back(
         Label{"Scene: Game", {2, (float)GetScreenHeight() - 20}});
     m_staticLabels.push_back(Label{"Press R to reload scenario", {0, 0}});
     m_staticLabels.push_back(Label{"Press Q to go to menu", {0, 25}});
-    // m_staticLabels.push_back(Label{"Accuracy: 100%", {0, 40}});
 
     reloadNodes();
+}
+
+void GameScene::cleanup() {
+    std::cout << "GAME_SCENE_CLEANUP" << std::endl;
+    SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 }
 
 void GameScene::render() {

@@ -10,7 +10,7 @@
 class MenuScene : public Scene {
   private:
     std::vector<Button> m_buttons;
-    std::vector<Label> m_labels;
+    std::vector<Label> m_staticLabels;
 
   public:
     ~MenuScene() override = default;
