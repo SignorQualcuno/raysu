@@ -9,7 +9,10 @@ class Engine;
 class SceneManager {
   private:
     std::unique_ptr<Scene> m_currentScene;
+    std::unique_ptr<Scene> m_pendingScene;
     Engine *m_engine;
+
+    void applyPendingScene();
 
   public:
     void changeScene(std::unique_ptr<Scene> newScene);
