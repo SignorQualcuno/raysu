@@ -16,7 +16,9 @@ class Engine {
     }
 
     SceneManager &getScene() { return m_sceneManager; }
-    void setScene(std::unique_ptr<Scene> newScene) { m_sceneManager.changeScene(std::move(newScene)); }
+    void setScene(std::unique_ptr<Scene> newScene) {
+        m_sceneManager.changeScene(std::move(newScene));
+    }
 };
 
 #endif // ENGINE_H
